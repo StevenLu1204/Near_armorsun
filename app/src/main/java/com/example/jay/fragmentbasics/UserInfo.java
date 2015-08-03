@@ -1,6 +1,8 @@
 package com.example.jay.fragmentbasics;
 
+import android.app.ActionBar;
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,30 +15,33 @@ import static android.widget.ListView.*;
 
 public class UserInfo extends AppCompatActivity {
 
-    private ListView acceptedList;
-    private ListView helpedList;
-    private String[] accepted;
-    private String[] helped;
+
+
+    private ListView ReceivedList;
+    private ListView GivenList;
+    private String[] Received;  //store the accepted list
+    private String[] Given;    //store the helped list
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info);
-        /*
-                * the lists.xm file in vlaues/  list the  accepted list item and the helped list item
-                * */
-        //set the accepted litview
-        accepted=getResources().getStringArray(R.array.accepted);
-        acceptedList=(ListView)findViewById(R.id.listViewAccepted);
-        ArrayAdapter<String> a =new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,accepted);
-        acceptedList.setAdapter(a);
-        //set the helped listview
-        helped=getResources().getStringArray(R.array.helped);
-        helpedList=(ListView)findViewById(R.id.listViewHelped);
-        ArrayAdapter<String> b=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,helped);
-        helpedList.setAdapter(b);
-        helpedList.setVisibility(INVISIBLE);
 
+        /*
+        * the lists.xm file in vlaues file  list the  accepted list item and the helped list item
+        */
+        //set the accepted litview
+        Received=getResources().getStringArray(R.array.accepted);
+        ReceivedList=(ListView)findViewById(R.id.listViewReceived);
+        ArrayAdapter<String> a =new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,Received);
+        ReceivedList.setAdapter(a);
+
+        //set the helped listview
+        Given=getResources().getStringArray(R.array.helped);
+        GivenList=(ListView)findViewById(R.id.listViewGiven);
+        ArrayAdapter<String> b=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,Given);
+        GivenList.setAdapter(b);
+        GivenList.setVisibility(INVISIBLE);
     }
 
     @Override
@@ -61,14 +66,14 @@ public class UserInfo extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     //when the accepted button i s pressed acceptedList will be visble and helpedList will hide
-    public void btnAccepted_click(View view){
-        acceptedList.setVisibility(ListView.VISIBLE);
-        helpedList.setVisibility(ListView.INVISIBLE);
+    public void btnReceived_click(View view){
+        ReceivedList.setVisibility(ListView.VISIBLE);
+        GivenList.setVisibility(ListView.INVISIBLE);
     }
     //when the helped button i s pressed acceptedList will hide and helpedList will be visble
-    public void btnHelped_click(View view){
-        helpedList.setVisibility(ListView.VISIBLE);
-        acceptedList.setVisibility(ListView.INVISIBLE);
+    public void btnGiven_click(View view){
+        GivenList.setVisibility(ListView.VISIBLE);
+        ReceivedList.setVisibility(ListView.INVISIBLE);
     }
     //when the setting button(an image button) is pressed start the settingactivity
     public void imgBtnSetting_click(View view){

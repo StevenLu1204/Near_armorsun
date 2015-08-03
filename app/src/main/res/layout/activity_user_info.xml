@@ -13,33 +13,33 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Accepted"
-            android:id="@+id/btnAccepted"
+            android:text="@string/btnReceived"
+            android:id="@+id/btnReceived"
             android:layout_marginTop="200dp"
             android:layout_marginLeft="0dp"
             android:singleLine="false"
-            android:onClick="btnAccepted_click" />
+            android:onClick="btnReceived_click" />
 
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/listViewAccepted"
+            android:id="@+id/listViewReceived"
             android:layout_marginTop="250dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Helped"
-            android:id="@+id/btnHelped"
+            android:text="@string/btnGiven"
+            android:id="@+id/btnGiven"
             android:layout_gravity="left|top"
-            android:onClick="btnHelped_click"
+            android:onClick="btnGiven_click"
             android:layout_marginTop="200dp"
             android:layout_marginLeft="100dp" />
 
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/listViewHelped"
+            android:id="@+id/listViewGiven"
             android:layout_marginTop="250dp" />
 
         <ImageButton
@@ -51,7 +51,7 @@
             android:layout_marginRight="0dp"
             android:src="@drawable/setting_icon"
             android:visibility="visible"
-            android:contentDescription="settingIcon"
+            android:contentDescription="@string/imgBtnSetting"
             android:clickable="true"
             android:onClick="imgBtnSetting_click"
             android:scaleType="fitCenter"
@@ -67,22 +67,13 @@
             android:layout_marginTop="60dp"
             android:layout_marginLeft="20dp" />
 
-        <ImageView
-            android:layout_width="115dp"
-            android:layout_height="115dp"
-            android:id="@+id/imgView_Level"
-            android:layout_gravity="right|top"
-            android:src="#4cd918"
-            android:layout_marginRight="50dp"
-            android:layout_marginTop="50dp" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txtLvlNum"
             android:id="@+id/txt_Level"
             android:layout_gravity="left|top"
-            android:textSize="70dp"
+            android:textSize="70sp"
             android:layout_marginTop="60dp"
             android:layout_marginLeft="120dp" />
 

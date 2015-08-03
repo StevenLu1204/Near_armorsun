@@ -1,6 +1,7 @@
 package com.example.jay.fragmentbasics;
 
 import android.app.ExpandableListActivity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,46 +19,49 @@ import java.util.List;
 
 public class SettingActivity extends AppCompatActivity {
     /*
-        * the file  pro_field_list_child.xml define the layout of the professional field subtitles
-        * the file  pro_field_list_parent.xml define the layout of the professional field titles
+    * the file  pro_field_list_child.xml defines the layout of the professional field subtitles
+    * the file  pro_field_list_parent.xml defines the layout of the professional field titles
     */
 
-    ExpandableListView proFieldListView;
+    ExpandableListView proFieldListView;    //the expandable listview displays the professional fields
     HashMap<String,List<String>> proField;
-    List<String> proFieldDetail;//professional field title and subtitle
-    proFieldAdapter adapter;//an adapter link the data and expandable listview
-    ListView LVSelected;
-    ArrayList<String> selectedItems=new ArrayList<String>();
-    ArrayAdapter slctItemsAdapter;
+    List<String> proFieldDetail;        //stores the professional field data(titles and subtitles)(check the proFieldDataProvider.java)
+    proFieldAdapter adapter;            //an adapter linked the data and expandable listview
+
+    ListView LVSelected;                                        //a listview displays what you select
+    ArrayList<String> selectedItems=new ArrayList<String>();    //an arraylist stores what you select
+    ArrayAdapter slctItemsAdapter;                              //an adapter links data and listview
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
+        //initialize the listview  which displays the selected items
         LVSelected=(ListView)findViewById(R.id.listViewSelected);
         slctItemsAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,selectedItems);
         LVSelected.setAdapter(slctItemsAdapter);
 
+        //an expandable List View displays the professional fields
         proFieldListView=(ExpandableListView)findViewById(R.id.proFieldListView);
-        proField=proFieldDataProvider.getInfo();//get the data
-        proFieldDetail=new ArrayList<String>(proField.keySet());//put the data into the hashmap
-        adapter=new proFieldAdapter(this,proField,proFieldDetail);
+        proField=proFieldDataProvider.getInfo();                      //get the data
+        proFieldDetail=new ArrayList<String>(proField.keySet());    //get the proField-hashmap key and put it into the proFieldDetail-ArrayList
+        adapter=new proFieldAdapter(this,proField,proFieldDetail);  //put proField-hashmap and the proFieldDetail-ArrayList into the adapter
         proFieldListView.setAdapter(adapter);
 
+        /*
+        *  a listener checks which item(child) is selected
+        *  if an item(child) is selected it will toast which item is selected and add to the listview under the professional field.
+        */
         proFieldListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                Toast.makeText(getBaseContext(), proField.get(proFieldDetail.get(groupPosition)).get(childPosition) + " is choosed.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), proField.get(proFieldDetail.get(groupPosition)).get(childPosition) + " is selected.", Toast.LENGTH_SHORT).show();
                 selectedItems.add(proField.get(proFieldDetail.get(groupPosition)).get(childPosition));
                 slctItemsAdapter.notifyDataSetChanged();
                 return false;
             }
         });
-
-
-
-
     }
 
     @Override
@@ -80,5 +84,11 @@ public class SettingActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void btnSave_click(View view){
+        Intent intent = new Intent(this,UserInfo.class);
+        startActivity(intent);
+        finish();
     }
 }

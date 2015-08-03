@@ -43,6 +43,7 @@ public class proFieldDataProvider {
         List<String> Photography=new ArrayList<String>();
         Photography.add("Chromatology");
 
+        //put those List into Hashmap
         proFieldDetail.put("Computer Sciences",ComputerSciences);
         proFieldDetail.put("Design",Design);
         proFieldDetail.put("Economics",Economics);

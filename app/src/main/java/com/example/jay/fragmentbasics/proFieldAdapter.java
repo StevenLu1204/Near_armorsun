@@ -18,7 +18,8 @@ public class proFieldAdapter extends BaseExpandableListAdapter {
 
     private Context context;
     private HashMap<String,List<String>> proField;
-    private List<String> proFieldDetail;// store the professional field titile and subtitle
+    private List<String> proFieldDetail;            // store the professional field titles and subtitles
+
     //Constructor
     public  proFieldAdapter(Context context,HashMap<String,List<String>> hashMap,List<String> list){
         this.context=context;
@@ -61,6 +62,7 @@ public class proFieldAdapter extends BaseExpandableListAdapter {
     public boolean hasStableIds() {
         return false;
     }
+
     //gets a view to display the given group (our professional field tittle)
     @Override
     public View getGroupView(int parent, boolean isExpanded, View convertView, ViewGroup parentView) {
@@ -75,6 +77,7 @@ public class proFieldAdapter extends BaseExpandableListAdapter {
         parentTextView.setText(groupTitle);
         return convertView;
     }
+
     //gets a view to display the given child (our professional field subtitle) within the given group (our professional fielf title)
     @Override
     public View getChildView(int parent, int child, boolean isLastChild, View convertView, ViewGroup parentView) {
