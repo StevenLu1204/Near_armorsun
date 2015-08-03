@@ -6,4 +6,11 @@
     <string name="title_activity_user_info">UserInfo</string>
     <string name="title_activity_setting">SettingActivity</string>
 
+    <string name="TxtChange_Password">Change Password</string>
+    <string name="TxtChange_Email">Change Email</string>
+    <string name="txtLevel">LV.</string>
+    <string name="txtLvlNum">5</string>
+    <string name="txtCommunityID">Community Identification :</string>
+
+
 </resources>

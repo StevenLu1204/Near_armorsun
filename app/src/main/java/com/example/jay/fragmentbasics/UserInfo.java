@@ -27,12 +27,12 @@ public class UserInfo extends AppCompatActivity {
                 * */
         //set the accepted litview
         accepted=getResources().getStringArray(R.array.accepted);
-        acceptedList=(ListView)findViewById(R.id.listView_accepted);
+        acceptedList=(ListView)findViewById(R.id.listViewAccepted);
         ArrayAdapter<String> a =new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,accepted);
         acceptedList.setAdapter(a);
         //set the helped listview
         helped=getResources().getStringArray(R.array.helped);
-        helpedList=(ListView)findViewById(R.id.listView_helped);
+        helpedList=(ListView)findViewById(R.id.listViewHelped);
         ArrayAdapter<String> b=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,helped);
         helpedList.setAdapter(b);
         helpedList.setVisibility(INVISIBLE);
