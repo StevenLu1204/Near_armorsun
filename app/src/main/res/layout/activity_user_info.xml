@@ -10,6 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <com.example.jay.fragmentbasics.VerticalProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/verticalRatingBar1"
+            android:layout_width="10dp"
+            android:progress="1"
+            android:layout_marginLeft="210dp"
+            android:layout_height="150dp" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -17,7 +25,7 @@
             android:id="@+id/btnReceived"
             android:layout_marginTop="200dp"
             android:layout_marginLeft="0dp"
-            android:singleLine="false"
+            android:singleLine="true"
             android:onClick="btnReceived_click" />
 
         <ListView
