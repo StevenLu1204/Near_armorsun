@@ -12,9 +12,8 @@
 
         <com.example.jay.fragmentbasics.VerticalProgressBar
             style="?android:attr/progressBarStyleHorizontal"
-            android:id="@+id/verticalRatingBar1"
+            android:id="@+id/verticalProgressBar"
             android:layout_width="10dp"
-            android:progress="1"
             android:layout_marginLeft="210dp"
             android:layout_height="150dp" />
 

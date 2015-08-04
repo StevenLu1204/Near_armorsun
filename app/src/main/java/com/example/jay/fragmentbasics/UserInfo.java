@@ -11,12 +11,12 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+
 import static android.widget.ListView.*;
 
 public class UserInfo extends AppCompatActivity {
 
-
-
+    private VerticalProgressBar vProgressBar;
     private ListView ReceivedList;
     private ListView GivenList;
     private String[] Received;  //store the accepted list
@@ -42,6 +42,10 @@ public class UserInfo extends AppCompatActivity {
         ArrayAdapter<String> b=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,Given);
         GivenList.setAdapter(b);
         GivenList.setVisibility(INVISIBLE);
+
+        //set the vertical progress bar to 2%
+        vProgressBar=(VerticalProgressBar)findViewById(R.id.verticalProgressBar);
+        vProgressBar.setProgress(2);
     }
 
     @Override
