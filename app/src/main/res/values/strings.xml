@@ -7,16 +7,15 @@
     <string name="title_activity_setting">Setting</string>
     <string name="title_activity_message">Your Messages</string>
 
-    <string name="TxtChange_Password">Change Password</string>
-    <string name="TxtChange_Email">Change Email</string>
+    <string name="txtChange_Password">Change Password</string>
+    <string name="txtChange_Email">Change Email</string>
     <string name="txtLevel">LV.</string>
     <string name="txtLvlNum">1</string>
     <string name="txtCommunityID">Community Identification :</string>
     <string name="imgBtnSetting">settingIcon</string>
     <string name="btnGiven">Given</string>
     <string name="btnReceived">Received</string>
-    <string name="ProfessionalField">Professional Field</string>
     <string name="btnSave">Save</string>
-
+    <string name="btnProField">Professional Field</string>
 
 </resources>

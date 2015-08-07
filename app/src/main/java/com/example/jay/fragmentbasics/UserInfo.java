@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-
 import static android.widget.ListView.*;
 
 public class UserInfo extends AppCompatActivity {

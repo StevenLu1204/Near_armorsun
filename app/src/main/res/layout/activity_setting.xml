@@ -1,17 +1,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.jay.fragmentbasics.SettingActivity">
-
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView" >
-
-    </ScrollView>
 
     <Button
         android:layout_width="wrap_content"
@@ -26,7 +19,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/TxtChange_Email"
+        android:text="@string/txtChange_Email"
         android:id="@+id/txtViewCangeEmail"
         android:layout_marginTop="50dp"
         android:textSize="20sp"
@@ -47,7 +40,7 @@
         android:layout_alignParentStart="false"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="0dp"
-        android:text="@string/TxtChange_Password" />
+        android:text="@string/txtChange_Password" />
 
     <EditText
         android:layout_width="match_parent"
@@ -63,30 +56,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/txtViewCP" />
 
-    <ExpandableListView
-        android:layout_width="fill_parent"
-        android:layout_height="200dp"
-        android:id="@+id/proFieldListView"
-        android:layout_gravity="right|bottom"
-        android:layout_marginTop="10dp"
-        android:layout_alignParentLeft="false"
-        android:layout_marginLeft="0dp"
-        android:layout_alignParentTop="false"
-        android:layout_below="@+id/TxtViewProField" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/ProfessionalField"
-        android:id="@+id/TxtViewProField"
-        android:layout_gravity="left|top"
-        android:layout_marginTop="30dp"
-        android:textSize="20sp"
-        android:layout_alignParentLeft="false"
-        android:layout_marginLeft="0dp"
-        android:layout_alignParentTop="false"
-        android:layout_marginRight="0dp"
-        android:layout_below="@+id/txtViewCommunityID" />
 
     <EditText
         android:layout_width="match_parent"
@@ -98,10 +67,6 @@
         android:layout_toEndOf="@+id/txtViewCP"
         android:layout_marginLeft="180dp"
         android:layout_marginStart="0dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/txtViewCangeEmail"
         android:layout_marginRight="0dp" />
 
@@ -111,7 +76,7 @@
         android:id="@+id/listViewSelected"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/proFieldListView"
+        android:layout_below="@+id/btnProField"
         android:layout_marginTop="10dp" />
 
     <TextView
@@ -124,5 +89,14 @@
         android:singleLine="false"
         android:layout_marginTop="15dp"
         android:layout_below="@+id/txtViewCangeEmail" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnProField"
+        android:id="@+id/btnProField"
+        android:onClick="btnProField_click"
+        android:layout_below="@+id/txtViewCommunityID"
+        android:layout_marginTop="10dp" />
 
 </RelativeLayout>
