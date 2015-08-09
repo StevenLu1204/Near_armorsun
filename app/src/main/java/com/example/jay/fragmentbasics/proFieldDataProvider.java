@@ -1,7 +1,7 @@
 package com.example.jay.fragmentbasics;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -11,9 +11,9 @@ import java.util.List;
  */
 public class proFieldDataProvider {
 
-    public static HashMap<String,List<String>> getInfo(){
+    public static LinkedHashMap<String,List<String>> getInfo(){
 
-        HashMap<String,List<String>> proFieldDetail=new HashMap<String,List<String>>();
+        LinkedHashMap<String,List<String>> proFieldData=new LinkedHashMap<String,List<String>>();
 
         List<String> ComputerSciences=new ArrayList<String>();
         ComputerSciences.add("C++/C Programming");
@@ -43,14 +43,17 @@ public class proFieldDataProvider {
         List<String> Photography=new ArrayList<String>();
         Photography.add("Chromatology");
 
-        //put those List into Hashmap
-        proFieldDetail.put("Computer Sciences",ComputerSciences);
-        proFieldDetail.put("Design",Design);
-        proFieldDetail.put("Economics",Economics);
-        proFieldDetail.put("Mechanics",Mechanics);
-        proFieldDetail.put("Psychology",Psychology);
-        proFieldDetail.put("photography",Photography);
+        List<String> Others=new ArrayList<String>();
 
-        return proFieldDetail;
+        //put those List into Hashmap
+        proFieldData.put("Computer Sciences", ComputerSciences);
+        proFieldData.put("Design", Design);
+        proFieldData.put("Economics", Economics);
+        proFieldData.put("Mechanics", Mechanics);
+        proFieldData.put("Psychology", Psychology);
+        proFieldData.put("photography", Photography);
+        proFieldData.put("others", Others);
+
+        return proFieldData;
     }
 }
